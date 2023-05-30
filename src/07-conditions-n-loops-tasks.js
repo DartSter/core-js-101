@@ -367,8 +367,16 @@ function isBracketsBalanced(str) {
  *    365, 4  => '11231'
  *    365, 10 => '365'
  */
-function toNaryString(/* num, n */) {
-  throw new Error('Not implemented');
+function toNaryString(num, n) {
+  let result = '';
+  let number = num;
+  while (number > 0) {
+    const remainder = number % n;
+    result = remainder.toString() + result;
+    number = Math.floor(number / n);
+  }
+
+  return result;
 }
 
 /**
